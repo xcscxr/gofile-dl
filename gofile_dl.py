@@ -1,4 +1,3 @@
-from http import client
 import requests
 
 url = ''
