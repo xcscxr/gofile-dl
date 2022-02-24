@@ -1,6 +1,11 @@
 import requests
+import hashlib
 
-url = 'https://gofile.io/d/j9lj35'
+# gofile url
+url = ''
+
+# optional
+password = ''
 
 # =================================
 
@@ -13,7 +18,8 @@ def gofile_dl(url):
         'contentId': url.split('/')[-1],
         'token': res['data']['token'],
         'websiteToken': 'websiteToken',
-        'cache': 'true'
+        'cache': 'true',
+        'password': hashlib.sha256(password.encode('utf-8')).hexdigest()
     }
     res = client.get(api_uri+'/getContent', params=data).json()
 
