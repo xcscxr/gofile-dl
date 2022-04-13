@@ -17,7 +17,7 @@ def gofile_dl(url):
     data = {
         'contentId': url.split('/')[-1],
         'token': res['data']['token'],
-        'websiteToken': 'websiteToken',
+        'websiteToken': '12345',
         'cache': 'true',
         'password': hashlib.sha256(password.encode('utf-8')).hexdigest()
     }
